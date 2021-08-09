@@ -12,6 +12,14 @@ export function add(a: number, b: number): number;
 * @returns {boolean}
 */
 export function isDivisibleBy(number: number, divisor: number): boolean;
+/**
+* @returns {string}
+*/
+export function getClientDate(): string;
+/**
+* @returns {string}
+*/
+export function crazy_method(): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
@@ -19,6 +27,10 @@ export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly add: (a: number, b: number) => number;
   readonly isDivisibleBy: (a: number, b: number) => number;
+  readonly getClientDate: (a: number) => void;
+  readonly crazy_method: (a: number) => void;
+  readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
+  readonly __wbindgen_free: (a: number, b: number) => void;
 }
 
 /**
