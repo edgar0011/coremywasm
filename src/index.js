@@ -1,4 +1,4 @@
-import init from "../pkg/core_my_wasm.js";
+import init, { getClientDate, sendMessage } from "../pkg/core_my_wasm.js";
 
 window.coreWasm = null
 
@@ -13,17 +13,22 @@ async function main() {
     const addResult = cmw.add(24, 24);
     const divisibleResult = cmw.isDivisibleBy(24, 24);
 
-    const getDateResult = cmw.getClientDate();
-    const crazy_method = cmw.crazy_method();
+    const getDateResult = getClientDate();
+    const getDateResult2 = cmw.getClientDate();
+    const sendMessageResult = sendMessage('Message1');
+    const sendMessageResult2 = cmw.sendMessage('Message2');
+    
   
     // Set the result onto the body
-    document.body.innerHTML = `addResult: ${addResult}</br>`;
-  
+    document.body.innerHTML = `addResult: ${addResult}</br>`;  
   
     document.body.innerHTML += `divisibleResult: ${divisibleResult}</br>`;
     
     document.body.innerHTML += `getDateResult: ${getDateResult}</br>`;
-    document.body.innerHTML += `crazy_method: ${crazy_method}`;
+    document.body.innerHTML += `getDateResult2: ${getDateResult2}</br>`;
+
+    document.body.innerHTML += `sendMessageResult: ${sendMessageResult}</br>`;
+    document.body.innerHTML += `sendMessageResult2: ${sendMessageResult2}</br>`;
   };
   const wasmReady = await runWasm();
   

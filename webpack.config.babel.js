@@ -89,6 +89,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.wasm$/,
+        use: 'wasm-loader',
+      },
       // {
       //   test: /\.(scss|sass)$/,
       //   use: [
@@ -205,13 +209,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      // favicon: './src/assets/favicon32.png',
+      favicon: './src/assets/favicon32.png',
       filename: 'index.html',
       inject: 'body',
-      title: 'TestCoreMyLib',
-      description: 'TestCoreMyLib, javascript, babel, eslint, webpack, es6, module, lib',
-      keywords: 'TestCoreMyLib, javascript, babel, eslint, webpack, es6, module, lib',
-      version: `${process.env.server || 'dev'}-0.0.2`,
+      title: 'CoreMyWasm',
+      description: 'CoreMyWasm, web assembly, wasm, webassemlby, javascript, babel, eslint, webpack, es6, module, lib',
+      keywords: 'CoreMyWasm, web assembly, wasm, webassemlby, javascript, babel, eslint, webpack, es6, module, lib',
+      version: `${process.env.server || 'dev'}-0.0.1`,
       chunksSortMode: 'none',
     }),
     // new ManifestPlugin(),

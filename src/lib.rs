@@ -3,9 +3,12 @@
 use wasm_bindgen::prelude::*;
 use chrono::prelude::*;
 
-// Our Add function
-// wasm-pack requires "exported" functions
-// to include #[wasm_bindgen]
+
+#[wasm_bindgen]
+pub fn return_string() -> String {
+    "hello".into()
+}
+
 #[wasm_bindgen]
 pub fn add(a: i32, b: i32) -> i32 {
   return a + b;
@@ -28,15 +31,12 @@ pub fn get_client_date() -> String {
     // return now.timestamp();
     // now.format("%a %b %e %T %Y")
     let dt: DateTime<Utc> = now.into();
-    return format!("Date: {}", dt.format("%+"));
+    format!("Date: {}", dt.format("%+")).into()
 }
 
-#[wasm_bindgen]
-pub fn crazy_method() -> String {
-   // let now: DateTime<Utc> = Utc::now();
-    // return now.timestamp();
-    // now.format("%a %b %e %T %Y")
-//     let dt: DateTime<Utc> = now.into();
-    // return format!("Date: {}", dt.format("%+"));
-    format!("Current Time is: 00:00:00 {}", 1)
+
+#[wasm_bindgen(js_name = "sendMessage")]
+pub fn send_message(input_string: String) -> String {
+  let result = format!("Message sent: {} {}", input_string, ".");
+  return result.into();
 }

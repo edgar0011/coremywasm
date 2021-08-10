@@ -1,6 +1,10 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+* @returns {string}
+*/
+export function return_string(): string;
+/**
 * @param {number} a
 * @param {number} b
 * @returns {number}
@@ -17,20 +21,24 @@ export function isDivisibleBy(number: number, divisor: number): boolean;
 */
 export function getClientDate(): string;
 /**
+* @param {string} input_string
 * @returns {string}
 */
-export function crazy_method(): string;
+export function sendMessage(input_string: string): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
+  readonly return_string: (a: number) => void;
   readonly add: (a: number, b: number) => number;
   readonly isDivisibleBy: (a: number, b: number) => number;
   readonly getClientDate: (a: number) => void;
-  readonly crazy_method: (a: number) => void;
+  readonly sendMessage: (a: number, b: number, c: number) => void;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_free: (a: number, b: number) => void;
+  readonly __wbindgen_malloc: (a: number) => number;
+  readonly __wbindgen_realloc: (a: number, b: number, c: number) => number;
 }
 
 /**
