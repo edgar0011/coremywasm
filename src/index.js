@@ -7,7 +7,7 @@ async function main() {
   const runWasm = async () => {
     // Instantiate our wasm module
     const cmw = await cmwModule.default("../pkg/core_my_wasm_bg.wasm");
-    window.coreWasm = cmw
+    window.coreWasm = cmwModule
   
     // Call the Add function export from wasm, save the result
     const addResult = cmw.add(24, 24);
@@ -38,7 +38,9 @@ async function main() {
     // document.body.innerHTML += `sendMessageResult: ${sendMessageResult}</br>`;
     document.body.innerHTML += `sendMessageResult: ${sendMessageResult2}</br>`;
   };
-  const wasmReady = await runWasm();
+  
+  window.wasmReady = runWasm();
+  await window.wasmReady;
   
   console.log('wasm ready')
   console.log('coreWasm', coreWasm)
