@@ -25,6 +25,12 @@ export function getClientDate(): string;
 * @returns {string}
 */
 export function sendMessage(input_string: string): string;
+/**
+* @param {number} number
+* @param {number} divisor
+* @returns {boolean}
+*/
+export function isDivisibleBy2(number: number, divisor: number): boolean;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
@@ -35,6 +41,7 @@ export interface InitOutput {
   readonly isDivisibleBy: (a: number, b: number) => number;
   readonly getClientDate: (a: number) => void;
   readonly sendMessage: (a: number, b: number, c: number) => void;
+  readonly isDivisibleBy2: (a: number, b: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_free: (a: number, b: number) => void;
   readonly __wbindgen_malloc: (a: number) => number;

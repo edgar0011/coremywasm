@@ -169,6 +169,16 @@ export function sendMessage(input_string) {
     }
 }
 
+/**
+* @param {number} number
+* @param {number} divisor
+* @returns {boolean}
+*/
+export function isDivisibleBy2(number, divisor) {
+    var ret = wasm.isDivisibleBy(number, divisor);
+    return ret !== 0;
+}
+
 function addHeapObject(obj) {
     if (heap_next === heap.length) heap.push(heap.length + 1);
     const idx = heap_next;
