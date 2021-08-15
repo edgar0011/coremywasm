@@ -50,11 +50,16 @@ const coreWasmReady = new Promise((resolve, reject) => {
   
     loadWasm().then((ready) => {
       console.log('MAIN fun run, ready')
-      console.log('coreWasm2', coreWasm)
+      console.log('coreWasm', coreWasm)
+      console.log('coreWasm?.getClientDate()', coreWasm?.getClientDate())
       resolve(ready)
     })
   
   });  
 });
 
-coreWasmReady.then((result) => console.log('coreWasmReady', result))
+coreWasmReady.then((result) => {
+  console.log('coreWasmReady', result)
+  console.log('result?.getClientDate()', result?.getClientDate())
+
+})
