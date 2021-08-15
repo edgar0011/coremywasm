@@ -1,0 +1,34 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin : 0;
+  padding: 0;
+}
+
+// body {
+//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+// }
+
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+/* Now, let's apply it on an element */
+body {
+  font-family: "system";
+}
+
+.main {
+  background-color: #EFEFEF;
+  border: 1px solid #999999;border-radius: 0.4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  margin: 1rem;
+}

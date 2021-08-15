@@ -94,26 +94,26 @@ module.exports = {
         test: /\.wasm$/,
         use: 'wasm-loader',
       },
-      // {
-      //   test: /\.(scss|sass)$/,
-      //   use: [
-      //     // 'style-loader',
-      //     MiniCssExtractPlugin.loader,
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         sourceMap: false,
-      //       },
-      //     },
-      //     'resolve-url-loader',
-      //     {
-      //       loader: 'sass-loader',
-      //       options: {
-      //         sourceMap: false,
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.(scss|sass)$/,
+        use: [
+          // 'style-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
+          // 'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
+        ],
+      },
       // {
       //   test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
       //   use: 'file-loader?limit=100000&mimetype=application/font-woff',
