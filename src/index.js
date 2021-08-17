@@ -1,12 +1,12 @@
 import * as cmwModule from "../pkg/core_my_wasm";
 import './styles.scss'
 
-var coreWasm = null;
+window.coreWasm = null;
 
 async function loadWasm() {
   // Instantiate our wasm module
   const cmw = await cmwModule.default("../pkg/core_my_wasm_bg.wasm");
-  coreWasm = cmwModule;
+  window.coreWasm = cmwModule;
 
   // Call the Add function export from wasm, save the result
   const addResult = cmw.add(24, 24);
@@ -43,7 +43,7 @@ async function loadWasm() {
   return coreWasm
 }
 
-const coreWasmReady = new Promise((resolve, reject) => {
+window.coreWasmReady = new Promise((resolve, reject) => {
   
   document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOMContentLoaded:', event);
