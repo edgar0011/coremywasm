@@ -7,6 +7,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import { WebpackManifestPlugin as ManifestPlugin } from 'webpack-manifest-plugin'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -219,7 +220,12 @@ module.exports = {
       version: `${process.env.server || 'dev'}-0.0.1`,
       chunksSortMode: 'none',
     }),
-    // new ManifestPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: "pkg", to: "pkg" },
+      ],
+    }),
+    new ManifestPlugin(),
     // new webpack.DefinePlugin({
     //   SC_DISABLE_SPEEDY: true,
     // }),
@@ -228,11 +234,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production'),
       PRODUCTION: JSON.stringify('production'),
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: "pkg", to: "pkg" },
-      ],
-    }),
+    
   ].concat(
     isProd && process.env.ANALYZE
       ? [

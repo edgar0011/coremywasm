@@ -38,6 +38,22 @@ async function loadWasm() {
   // app.innerHTML += `sendMessageResult: ${sendMessageResult}</br>`;
   app.innerHTML += `sendMessageResult: ${sendMessageResult2}</br>`;
 
+  cmwModule.getGithubCommits('edgar0011/coremywasm').then((...rest) => {
+    console.log('GitHub, edgar0011/coremywasm')
+    console.log(rest)
+    app.innerHTML += `GitHub: ${JSON.stringify(rest)}</br>`;
+  })
+
+  
+  cmwModule.getWorldTime().then((...rest) => {
+    console.log('getWorldTime')
+    console.log(rest)
+    app.innerHTML += `GitHub: ${JSON.stringify(rest)}</br>`;
+  })
+
+  
+
+
   app.classList.add('main');
 
   return coreWasm
