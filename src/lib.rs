@@ -112,7 +112,6 @@ pub async fn get_github_commits(repo: String) -> Result<JsValue, JsValue> {
     Ok(JsValue::from_serde(&branch_info).unwrap())
 }
 
-
 #[derive(Debug, Default, Serialize, Deserialize)]
 pub struct WorldTime {
     pub abbreviation: String,
@@ -144,7 +143,7 @@ pub async fn get_world_time(timezone: Option<String>) -> Result<JsValue, JsValue
 
     // Use serde to parse the JSON into a struct.
     //let world_time: WorldTime = json.into_serde().unwrap();
-
     // Send the `world_time` struct back to JS as an `Object`.
     Ok(json.into())
+    // Ok(JsValue::from_serde(&world_time).unwrap())
 }
