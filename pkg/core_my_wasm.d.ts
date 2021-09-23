@@ -33,14 +33,14 @@ export function sendMessage(input_string: string): string;
 export function isDivisibleBy2(number: number, divisor: number): boolean;
 /**
 * @param {string} repo
-* @returns {any}
+* @returns {Promise<any>}
 */
-export function getGithubCommits(repo: string): any;
+export function getGithubCommits(repo: string): Promise<any>;
 /**
 * @param {string | undefined} timezone
-* @returns {any}
+* @returns {Promise<any>}
 */
-export function getWorldTime(timezone?: string): any;
+export function getWorldTime(timezone?: string): Promise<any>;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
@@ -57,11 +57,11 @@ export interface InitOutput {
   readonly __wbindgen_malloc: (a: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number) => number;
   readonly __wbindgen_export_2: WebAssembly.Table;
-  readonly _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h549f0d7e133acdc0: (a: number, b: number, c: number) => void;
+  readonly _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h25e7215aeb2d5b67: (a: number, b: number, c: number) => void;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_free: (a: number, b: number) => void;
   readonly __wbindgen_exn_store: (a: number) => void;
-  readonly wasm_bindgen__convert__closures__invoke2_mut__hc7494453703bc0a7: (a: number, b: number, c: number, d: number) => void;
+  readonly wasm_bindgen__convert__closures__invoke2_mut__h05b66e7e416a463d: (a: number, b: number, c: number, d: number) => void;
 }
 
 /**
