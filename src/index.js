@@ -41,14 +41,14 @@ async function loadWasm() {
   cmwModule.getGithubCommits('edgar0011/coremywasm').then((data) => {
     console.log('GitHub, edgar0011/coremywasm')
     console.log(data)
-    app.innerHTML += `GitHub: ${JSON.stringify(data)}</br>`;
+    app.innerHTML += `GitHub: ${JSON.stringify(data, null, 2)}</br>`;
   })
 
   
   cmwModule.getWorldTime().then((data) => {
     console.log('getWorldTime')
     console.log(data)
-    app.innerHTML += `WorldTime: ${JSON.stringify(data)}</br>`;
+    app.innerHTML += `WorldTime: ${JSON.stringify(data, null, 2)}</br>`;
   })
 
   
